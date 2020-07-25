@@ -41,6 +41,7 @@ public class UserController {
 		 return userDtoPage;
 	}
 
+// if you don't want page attributes in the response
 /*	@GetMapping(value = "/alluser", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<User> getUserinfo(@PageableDefault(page=0, size=4) Pageable pageRequest) {
 		Page<User> userPage = userService.getAllUserInfo(pageRequest);
