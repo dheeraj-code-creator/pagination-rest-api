@@ -27,6 +27,11 @@ public class UserController {
 	@Autowired
 	private ConverterService converterService;
 	
+	/* by default sorting is in Ascending order, if you want to perform sorting in descending order than use below parameters with URL:
+                    http://localhost:9091/user-management/userinfo/alluser?sort=userId,desc
+                    http://localhost:9091/user-management/userinfo/alluser?page=1&size=4&sort=userId,desc
+        */		    
+	
 	@GetMapping(value = "/alluser", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Page<User> getUserinfo(@PageableDefault(page=0, size=4) Pageable pageRequest) {
 		Page<User> userPage = userService.getAllUserInfo(pageRequest);
